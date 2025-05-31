@@ -1,0 +1,36 @@
+﻿@model List<Ogrenci>
+
+    <button>Yeni ekle</button>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Öğrenci Adı</th>
+            <th>Öğrenci Yaş</th>
+            <th>Öğrenci Hobiler</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ogrenci in Model)
+        {
+            <tr>
+                <td>@ogrenci.OgrenciAdi</td>
+                <td>@ogrenci.OgrenciYas</td>
+                <td>
+                    <ul>
+                    @foreach (var item in ogrenci.OgrenciHobiler)
+                    {
+                        <li>@item</li>
+                    }
+                    </ul>
+                </td>
+                <td>
+                    <a asp-action="Detay" asp-route-id="@ogrenci.OgrenciId">Detay</a> | <a asp-action="Duzenle" asp-route-id="@ogrenci.OgrenciId">Duzenle</a> | <a asp-action="Sil" asp-route-id="@ogrenci.OgrenciId">Sil</a>
+                </td>
+            </tr>
+            
+        }
+
+    </tbody>
+    
+</table>

@@ -1,0 +1,11 @@
+﻿@model Ogrenci
+
+<form method="post" asp-action="Duzenle">
+	<input type="hidden" asp-for="@Model.OgrenciId" />
+	<input type="text" placeholder="Öğrenci Adı" asp-for="@Model.OgrenciAdi" />
+	<input type="text" placeholder="Doğum Tarihi" asp-for="@Model.OgrenciDogumTarihi" />
+	<input type="text" placeholder="Yaşı" asp-for="@Model.OgrenciYas" />
+	<input type="text" placeholder="Şehir" asp-for="@Model.Adres.Sehir" />
+	<input type="text" placeholder="Ülke" asp-for="@Model.Adres.Ulke" />
+	<input type="submit" value="Gönder" />
+</form>

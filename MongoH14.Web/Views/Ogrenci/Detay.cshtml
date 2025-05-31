@@ -1,0 +1,20 @@
+﻿@model Ogrenci
+
+<p><span style="font-weight:bold">Öğrenci Adı: </span>@Model.OgrenciAdi</p>
+<p><span style="font-weight:bold">Doğum Tarihi: </span>@Model.OgrenciDogumTarihi</p>
+<p><span style="font-weight:bold">Öğrenci Yaşı: </span>@Model.OgrenciYas</p>
+<p><span style="font-weight:bold">Öğrenci Adresi: </span>@Model.Adres.Sehir, @Model.Adres.Ulke</p>
+<p>
+	<span style="font-weight:bold">Öğrenci Hobiler: </span>
+	@foreach (var hobi in Model.OgrenciHobiler)
+	{
+		<span>@hobi ,</span>
+	}
+</p>
+<p>
+	<span style="font-weight:bold;">Öğrenci Dersleri</span>
+	@foreach(var ders in Model.OgrenciNotlar)
+	{
+		<div>@ders.DersAdi : @ders.NotDegeri</div>
+	}
+</p>
